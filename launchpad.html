@@ -80,14 +80,24 @@ header a {
     display: inline-block;
     text-decoration: none;
 }
+body {
+    overflow-x: hidden;
+}
+* {
+    max-width: 100%;
+}
+img, svg {
+    max-width: 100%;
+    height: auto;
+}
 </style>
 </head>
 <body class="font-display bg-background-dark text-gray-200">
 <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden bg-grid">
 <div class="absolute inset-0 z-0 bg-radial-glow"></div>
 <div class="relative flex h-full grow flex-col">
-<div class="flex flex-1 justify-center px-4 py-5 sm:px-10 md:px-20 lg:px-40">
-<div class="flex max-w-[960px] flex-1 flex-col">
+<div class="flex flex-1 justify-center px-2 sm:px-4 py-3 sm:py-5 md:px-10 lg:px-20 xl:px-40">
+<div class="flex max-w-[960px] flex-1 flex-col w-full">
 <header class="z-20 relative flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 bg-background-dark/50 px-3 sm:px-4 py-3 sm:py-4 backdrop-blur-md md:px-10">
 <div class="flex items-center gap-2 sm:gap-4 text-white">
 <div class="size-5 sm:size-6 text-primary">
@@ -121,22 +131,22 @@ header a {
 </nav>
 </div>
 </header>
-<main class="flex flex-col gap-16 py-10 md:gap-24 md:py-16">
+<main class="flex flex-col gap-10 sm:gap-16 py-6 sm:py-10 md:gap-24 md:py-16">
 <div class="@container">
 <div class="@[480px]:p-4">
-<div class="relative flex min-h-[480px] flex-col items-center justify-center gap-6 overflow-hidden border border-white/10 bg-black/30 p-4 shadow-2xl shadow-neon-purple/10 backdrop-blur-xl @[480px]:gap-8 @[480px]:rounded-2xl">
+<div class="relative flex min-h-[300px] sm:min-h-[400px] md:min-h-[480px] flex-col items-center justify-center gap-4 sm:gap-6 overflow-hidden border border-white/10 bg-black/30 p-3 sm:p-4 shadow-2xl shadow-neon-purple/10 backdrop-blur-xl rounded-xl sm:rounded-2xl">
 <div class="absolute inset-0 z-0 bg-gradient-to-br from-electric-blue/20 via-transparent to-neon-purple/30 opacity-50"></div>
 <div class="absolute -left-1/4 top-0 h-1/2 w-1/2 rounded-full bg-electric-blue/20 blur-3xl"></div>
 <div class="absolute -right-1/4 bottom-0 h-1/2 w-1/2 rounded-full bg-neon-purple/20 blur-3xl"></div>
-<div class="z-10 flex flex-col gap-4 text-center">
-<h1 class="text-4xl font-bold leading-tight tracking-tighter text-white @[480px]:text-6xl @[480px]:font-bold">Launch Your Token Instantly</h1>
-<h2 class="max-w-2xl text-base font-normal leading-relaxed text-white/80 @[480px]:text-lg">Revolutionary token launching system on Solana, built completely on-chain using Anchor Framework with intelligent bonding curve technology. No middle-man, no hidden fees, no rug risk.</h2>
+<div class="z-10 flex flex-col gap-3 sm:gap-4 text-center px-2">
+<h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-tight tracking-tighter text-white">Launch Your Token Instantly</h1>
+<h2 class="max-w-2xl mx-auto text-sm sm:text-base md:text-lg font-normal leading-relaxed text-white/80 px-2">Revolutionary token launching system on Solana, built completely on-chain using Anchor Framework with intelligent bonding curve technology. No middle-man, no hidden fees, no rug risk.</h2>
 </div>
-<div class="z-10 flex flex-col flex-wrap gap-3 sm:flex-row sm:justify-center">
-<button class="flex h-12 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-electric-blue to-neon-purple px-5 text-base font-bold leading-normal tracking-[0.015em] text-white shadow-lg shadow-neon-purple/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-neon-purple/40">
+<div class="z-10 flex flex-col w-full sm:flex-row sm:justify-center gap-3">
+<button class="flex h-11 sm:h-12 w-full sm:w-auto min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-electric-blue to-neon-purple px-4 sm:px-5 text-sm sm:text-base font-bold leading-normal tracking-[0.015em] text-white shadow-lg shadow-neon-purple/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-neon-purple/40">
 <span class="truncate">Launch Your Token</span>
 </button>
-<button class="group relative flex h-12 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-gray-800/50 px-5 text-base font-bold leading-normal tracking-[0.015em] text-white transition-colors hover:text-white">
+<button class="group relative flex h-11 sm:h-12 w-full sm:w-auto min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-gray-800/50 px-4 sm:px-5 text-sm sm:text-base font-bold leading-normal tracking-[0.015em] text-white transition-colors hover:text-white">
 <span class="absolute inset-0 z-0 bg-white/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
 <span class="relative z-10 truncate">View Active Launches</span>
 </button>
@@ -144,12 +154,12 @@ header a {
 </div>
 </div>
 </div>
-<div class="flex flex-col gap-10 px-4 py-10 @container">
-<div class="flex flex-col gap-4">
-<h1 class="max-w-[720px] text-3xl font-bold leading-tight tracking-tighter text-white @[480px]:text-4xl @[480px]:font-bold">Unmatched Benefits for Your Token Launch</h1>
-<p class="max-w-[720px] text-base font-normal leading-relaxed text-white/70">Our platform provides a suite of powerful features designed for a secure, transparent, and successful launch.</p>
+<div class="flex flex-col gap-6 sm:gap-10 px-2 sm:px-4 py-6 sm:py-10 @container">
+<div class="flex flex-col gap-3 sm:gap-4">
+<h1 class="max-w-[720px] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-tighter text-white">Unmatched Benefits for Your Token Launch</h1>
+<p class="max-w-[720px] text-sm sm:text-base font-normal leading-relaxed text-white/70">Our platform provides a suite of powerful features designed for a secure, transparent, and successful launch.</p>
 </div>
-<div class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4 p-0">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 p-0">
 <div class="card-glow group flex flex-1 transform flex-col gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-electric-blue/50 hover:shadow-glow-sm">
 <div class="relative z-10 text-electric-blue transition-colors group-hover:text-glow-cyan"><span class="material-symbols-outlined text-3xl"> sell </span></div>
 <div class="relative z-10 flex flex-col gap-1">
@@ -180,35 +190,37 @@ header a {
 </div>
 </div>
 </div>
-<section class="grid gap-8 px-4 md:grid-cols-2">
-<div class="flex flex-col gap-4">
-<h2 class="text-[22px] font-bold leading-tight tracking-tight text-white">Our Program</h2>
-<div class="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[.07] p-4 backdrop-blur-lg transition-all hover:border-white/20">
-<div class="flex-1 overflow-hidden">
-<p class="text-sm text-white/60">Program ID</p>
-<p class="truncate font-mono text-base text-white">G6bkvn3rnWtzCuB89rwzvUeAtxnSiLGDXL3oDtWV4Su9</p>
+<section class="grid gap-6 sm:gap-8 px-2 sm:px-4 md:grid-cols-2">
+<div class="flex flex-col gap-3 sm:gap-4">
+<h2 class="text-lg sm:text-xl md:text-[22px] font-bold leading-tight tracking-tight text-white">Our Program</h2>
+<div class="group flex items-center gap-2 sm:gap-4 rounded-xl sm:rounded-2xl border border-white/10 bg-white/[.07] p-3 sm:p-4 backdrop-blur-lg transition-all hover:border-white/20">
+<div class="flex-1 overflow-hidden min-w-0">
+<p class="text-xs sm:text-sm text-white/60">Program ID</p>
+<p class="truncate font-mono text-xs sm:text-sm md:text-base text-white">G6bkvn3rnWtzCuB89rwzvUeAtxnSiLGDXL3oDtWV4Su9</p>
 </div>
-<button class="text-white/60 transition-colors hover:text-white" onclick="navigator.clipboard.writeText('G6bkvn3rnWtzCuB89rwzvUeAtxnSiLGDXL3oDtWV4Su9')"><span class="material-symbols-outlined"> content_copy </span></button>
-<a class="text-white/60 transition-colors hover:text-white" href="https://explorer.solana.com/address/G6bkvn3rnWtzCuB89rwzvUeAtxnSiLGDXL3oDtWV4Su9?cluster=devnet" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined"> open_in_new </span></a>
+<div class="flex gap-1 sm:gap-2 flex-shrink-0">
+<button class="text-white/60 transition-colors hover:text-white p-1" onclick="navigator.clipboard.writeText('G6bkvn3rnWtzCuB89rwzvUeAtxnSiLGDXL3oDtWV4Su9')"><span class="material-symbols-outlined text-lg sm:text-xl"> content_copy </span></button>
+<a class="text-white/60 transition-colors hover:text-white p-1" href="https://explorer.solana.com/address/G6bkvn3rnWtzCuB89rwzvUeAtxnSiLGDXL3oDtWV4Su9?cluster=devnet" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-lg sm:text-xl"> open_in_new </span></a>
 </div>
 </div>
-<div class="flex flex-col gap-4">
-<h2 class="text-[22px] font-bold leading-tight tracking-tight text-white">Audited &amp; Secure</h2>
-<div class="rounded-2xl border border-white/10 bg-white/[.07] p-4 backdrop-blur-lg">
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-3xl text-green-400"> verified_user </span>
-<ul class="flex flex-col gap-2">
-<li class="flex items-center gap-2 text-sm text-white"><span class="material-symbols-outlined text-base text-electric-blue"> done </span> Anchor Security Checks</li>
-<li class="flex items-center gap-2 text-sm text-white"><span class="material-symbols-outlined text-base text-electric-blue"> done </span> PDA Validations</li>
-<li class="flex items-center gap-2 text-sm text-white"><span class="material-symbols-outlined text-base text-electric-blue"> done </span> Non-custodial Funds</li>
+</div>
+<div class="flex flex-col gap-3 sm:gap-4">
+<h2 class="text-lg sm:text-xl md:text-[22px] font-bold leading-tight tracking-tight text-white">Audited &amp; Secure</h2>
+<div class="rounded-xl sm:rounded-2xl border border-white/10 bg-white/[.07] p-3 sm:p-4 backdrop-blur-lg">
+<div class="flex items-start gap-3 sm:gap-4">
+<span class="material-symbols-outlined text-2xl sm:text-3xl text-green-400 flex-shrink-0"> verified_user </span>
+<ul class="flex flex-col gap-1.5 sm:gap-2">
+<li class="flex items-center gap-2 text-xs sm:text-sm text-white"><span class="material-symbols-outlined text-sm sm:text-base text-electric-blue flex-shrink-0"> done </span> Anchor Security Checks</li>
+<li class="flex items-center gap-2 text-xs sm:text-sm text-white"><span class="material-symbols-outlined text-sm sm:text-base text-electric-blue flex-shrink-0"> done </span> PDA Validations</li>
+<li class="flex items-center gap-2 text-xs sm:text-sm text-white"><span class="material-symbols-outlined text-sm sm:text-base text-electric-blue flex-shrink-0"> done </span> Non-custodial Funds</li>
 </ul>
 </div>
 </div>
 </div>
 </section>
-<section class="flex flex-col gap-6 px-4">
-<h2 class="text-[22px] font-bold leading-tight tracking-tight text-white">Platform Status</h2>
-<div class="grid gap-6 md:grid-cols-3">
+<section class="flex flex-col gap-4 sm:gap-6 px-2 sm:px-4">
+<h2 class="text-lg sm:text-xl md:text-[22px] font-bold leading-tight tracking-tight text-white">Platform Status</h2>
+<div class="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
 <div class="flex flex-col gap-2">
 <div class="flex justify-between text-sm">
 <span class="font-medium text-white">Smart Contract</span>
@@ -232,85 +244,85 @@ header a {
 </div>
 </div>
 </section>
-<section class="relative flex flex-col gap-8 px-4">
+<section class="relative flex flex-col gap-6 sm:gap-8 px-2 sm:px-4">
 <div class="text-center">
-<h2 class="text-[28px] font-bold leading-tight tracking-tighter text-white">How It Works</h2>
-<p class="mt-2 text-white/70">A simple, streamlined process to get your token to market.</p>
+<h2 class="text-xl sm:text-2xl md:text-[28px] font-bold leading-tight tracking-tighter text-white">How It Works</h2>
+<p class="mt-2 text-sm sm:text-base text-white/70">A simple, streamlined process to get your token to market.</p>
 </div>
-<div class="relative grid gap-8 md:grid-cols-3">
+<div class="relative grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-3">
 <div class="absolute left-0 right-0 top-8 hidden h-0.5 w-full items-center justify-center bg-gradient-to-r from-transparent via-electric-blue/50 to-transparent md:flex"></div>
-<div class="relative z-10 flex flex-col items-center gap-4 text-center">
-<div class="flex h-16 w-16 items-center justify-center rounded-full border-2 border-electric-blue bg-background-dark text-xl font-bold text-electric-blue shadow-lg shadow-electric-blue/30 transition-shadow hover:shadow-electric-blue/50">1</div>
-<h3 class="text-lg font-bold text-white">Set Token Parameters</h3>
-<p class="text-sm text-white/60">Set your token parameters including initial price and market cap settings.</p>
+<div class="relative z-10 flex flex-col items-center gap-3 sm:gap-4 text-center">
+<div class="flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full border-2 border-electric-blue bg-background-dark text-lg sm:text-xl font-bold text-electric-blue shadow-lg shadow-electric-blue/30 transition-shadow hover:shadow-electric-blue/50">1</div>
+<h3 class="text-base sm:text-lg font-bold text-white">Set Token Parameters</h3>
+<p class="text-xs sm:text-sm text-white/60 px-2">Set your token parameters including initial price and market cap settings.</p>
 </div>
-<div class="relative z-10 flex flex-col items-center gap-4 text-center">
-<div class="flex h-16 w-16 items-center justify-center rounded-full border-2 border-electric-blue bg-background-dark text-xl font-bold text-electric-blue shadow-lg shadow-electric-blue/30 transition-shadow hover:shadow-electric-blue/50">2</div>
-<h3 class="text-lg font-bold text-white">Initialize Bonding Curve</h3>
-<p class="text-sm text-white/60">Initialize the bonding curve and start the launch process with buy/sell functionality.</p>
+<div class="relative z-10 flex flex-col items-center gap-3 sm:gap-4 text-center">
+<div class="flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full border-2 border-electric-blue bg-background-dark text-lg sm:text-xl font-bold text-electric-blue shadow-lg shadow-electric-blue/30 transition-shadow hover:shadow-electric-blue/50">2</div>
+<h3 class="text-base sm:text-lg font-bold text-white">Initialize Bonding Curve</h3>
+<p class="text-xs sm:text-sm text-white/60 px-2">Initialize the bonding curve and start the launch process with buy/sell functionality.</p>
 </div>
-<div class="relative z-10 flex flex-col items-center gap-4 text-center">
-<div class="flex h-16 w-16 items-center justify-center rounded-full border-2 border-electric-blue bg-background-dark text-xl font-bold text-electric-blue shadow-lg shadow-electric-blue/30 transition-shadow hover:shadow-electric-blue/50">3</div>
-<h3 class="text-lg font-bold text-white">Finalize to Raydium</h3>
-<p class="text-sm text-white/60">Finalize and automatically migrate your token's liquidity pool to Raydium when ready.</p>
-</div>
-</div>
-</section>
-<section class="flex flex-col gap-6 px-4">
-<h2 class="text-[28px] font-bold leading-tight tracking-tighter text-white">Token Utility for PULSEAI</h2>
-<p class="text-white/70 max-w-3xl">MetaPulse Launchpad becomes the primary utility for PULSEAI token, creating continuous demand and value.</p>
-<div class="grid gap-6 md:grid-cols-2 mt-4">
-<div class="rounded-2xl border border-white/10 bg-white/[.07] p-6 backdrop-blur-lg">
-<h3 class="text-lg font-bold text-white mb-3">Primary Utility</h3>
-<ul class="flex flex-col gap-2 text-sm text-white/80">
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-electric-blue text-base">check_circle</span> Launchpad fees convert to buyback and burn</li>
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-electric-blue text-base">check_circle</span> Platform increases demand for token</li>
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-electric-blue text-base">check_circle</span> Token creators pay with PULSEAI for premium features</li>
-</ul>
-</div>
-<div class="rounded-2xl border border-white/10 bg-white/[.07] p-6 backdrop-blur-lg">
-<h3 class="text-lg font-bold text-white mb-3">Alpha Token for Developers</h3>
-<ul class="flex flex-col gap-2 text-sm text-white/80">
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-neon-purple text-base">check_circle</span> Staking features paid in PULSEAI</li>
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-neon-purple text-base">check_circle</span> Boosts and featured listings</li>
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-neon-purple text-base">check_circle</span> Curve customization options</li>
-</ul>
+<div class="relative z-10 flex flex-col items-center gap-3 sm:gap-4 text-center">
+<div class="flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full border-2 border-electric-blue bg-background-dark text-lg sm:text-xl font-bold text-electric-blue shadow-lg shadow-electric-blue/30 transition-shadow hover:shadow-electric-blue/50">3</div>
+<h3 class="text-base sm:text-lg font-bold text-white">Finalize to Raydium</h3>
+<p class="text-xs sm:text-sm text-white/60 px-2">Finalize and automatically migrate your token's liquidity pool to Raydium when ready.</p>
 </div>
 </div>
 </section>
-<section class="flex flex-col gap-6 px-4">
-<h2 class="text-[28px] font-bold leading-tight tracking-tighter text-white">Development Roadmap</h2>
-<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mt-4">
-<div class="rounded-2xl border border-white/10 bg-white/[.07] p-6 backdrop-blur-lg">
-<h3 class="text-base font-bold text-white mb-2">Beta Phase</h3>
-<ul class="flex flex-col gap-2 text-sm text-white/70">
+<section class="flex flex-col gap-4 sm:gap-6 px-2 sm:px-4">
+<h2 class="text-xl sm:text-2xl md:text-[28px] font-bold leading-tight tracking-tighter text-white">Token Utility for PULSEAI</h2>
+<p class="text-sm sm:text-base text-white/70 max-w-3xl">MetaPulse Launchpad becomes the primary utility for PULSEAI token, creating continuous demand and value.</p>
+<div class="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2 mt-3 sm:mt-4">
+<div class="rounded-xl sm:rounded-2xl border border-white/10 bg-white/[.07] p-4 sm:p-6 backdrop-blur-lg">
+<h3 class="text-base sm:text-lg font-bold text-white mb-2 sm:mb-3">Primary Utility</h3>
+<ul class="flex flex-col gap-1.5 sm:gap-2 text-xs sm:text-sm text-white/80">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-electric-blue text-sm sm:text-base flex-shrink-0">check_circle</span> Launchpad fees convert to buyback and burn</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-electric-blue text-sm sm:text-base flex-shrink-0">check_circle</span> Platform increases demand for token</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-electric-blue text-sm sm:text-base flex-shrink-0">check_circle</span> Token creators pay with PULSEAI for premium features</li>
+</ul>
+</div>
+<div class="rounded-xl sm:rounded-2xl border border-white/10 bg-white/[.07] p-4 sm:p-6 backdrop-blur-lg">
+<h3 class="text-base sm:text-lg font-bold text-white mb-2 sm:mb-3">Alpha Token for Developers</h3>
+<ul class="flex flex-col gap-1.5 sm:gap-2 text-xs sm:text-sm text-white/80">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-neon-purple text-sm sm:text-base flex-shrink-0">check_circle</span> Staking features paid in PULSEAI</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-neon-purple text-sm sm:text-base flex-shrink-0">check_circle</span> Boosts and featured listings</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-neon-purple text-sm sm:text-base flex-shrink-0">check_circle</span> Curve customization options</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-4 sm:gap-6 px-2 sm:px-4">
+<h2 class="text-xl sm:text-2xl md:text-[28px] font-bold leading-tight tracking-tighter text-white">Development Roadmap</h2>
+<div class="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-3 sm:mt-4">
+<div class="rounded-xl sm:rounded-2xl border border-white/10 bg-white/[.07] p-4 sm:p-6 backdrop-blur-lg">
+<h3 class="text-sm sm:text-base font-bold text-white mb-2">Beta Phase</h3>
+<ul class="flex flex-col gap-1.5 sm:gap-2 text-xs sm:text-sm text-white/70">
 <li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-400 text-base">done</span> Deploy bonding curve on Devnet</li>
 <li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-400 text-base">done</span> Complete functional UI</li>
 <li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-400 text-base">done</span> Buy/Sell logic stabilized</li>
 <li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">sync</span> Public testing</li>
 </ul>
 </div>
-<div class="rounded-2xl border border-white/10 bg-white/[.07] p-6 backdrop-blur-lg">
-<h3 class="text-base font-bold text-white mb-2">Mainnet Phase</h3>
-<ul class="flex flex-col gap-2 text-sm text-white/70">
+<div class="rounded-xl sm:rounded-2xl border border-white/10 bg-white/[.07] p-4 sm:p-6 backdrop-blur-lg">
+<h3 class="text-sm sm:text-base font-bold text-white mb-2">Mainnet Phase</h3>
+<ul class="flex flex-col gap-1.5 sm:gap-2 text-xs sm:text-sm text-white/70">
 <li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">schedule</span> Final mainnet deployment</li>
 <li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">schedule</span> Real token integration</li>
 <li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">schedule</span> Public community launch</li>
 <li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">schedule</span> SOL/USD price automation</li>
 </ul>
 </div>
-<div class="rounded-2xl border border-white/10 bg-white/[.07] p-6 backdrop-blur-lg">
-<h3 class="text-base font-bold text-white mb-2">Liquidity Engine</h3>
-<ul class="flex flex-col gap-2 text-sm text-white/70">
+<div class="rounded-xl sm:rounded-2xl border border-white/10 bg-white/[.07] p-4 sm:p-6 backdrop-blur-lg">
+<h3 class="text-sm sm:text-base font-bold text-white mb-2">Liquidity Engine</h3>
+<ul class="flex flex-col gap-1.5 sm:gap-2 text-xs sm:text-sm text-white/70">
 <li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">schedule</span> Auto LP Creator on Raydium</li>
 <li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">schedule</span> Auto-lock LP tokens</li>
 <li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">schedule</span> Automatic burn / Treasury logic</li>
 <li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">schedule</span> Platform fees system</li>
 </ul>
 </div>
-<div class="rounded-2xl border border-white/10 bg-white/[.07] p-6 backdrop-blur-lg">
-<h3 class="text-base font-bold text-white mb-2">Launchpad as a Service</h3>
-<ul class="flex flex-col gap-2 text-sm text-white/70">
+<div class="rounded-xl sm:rounded-2xl border border-white/10 bg-white/[.07] p-4 sm:p-6 backdrop-blur-lg">
+<h3 class="text-sm sm:text-base font-bold text-white mb-2">Launchpad as a Service</h3>
+<ul class="flex flex-col gap-1.5 sm:gap-2 text-xs sm:text-sm text-white/70">
 <li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">schedule</span> One-click token launch</li>
 <li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">schedule</span> API for third-party tools</li>
 <li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">schedule</span> MetaPulse Pro version</li>
