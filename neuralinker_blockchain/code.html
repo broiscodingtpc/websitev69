@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MetaPulse - NeuraLinker Blockchain</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Fira+Code&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "mono": ["Fira Code", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.05);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-bg {
+            background-image: linear-gradient(to right, #00BFFF, #8A2BE2);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#EAEAEA]">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="sticky top-0 z-50 px-4 md:px-10 lg:px-20 backdrop-blur-sm bg-background-dark/80">
+<div class="max-w-7xl mx-auto flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#282e39] py-3">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">MetaPulse</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal transition-colors" href="../metapulse_ai_landing_page/code.html">Home</a>
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal transition-colors" href="../metapulse_launchpad/code.html">Launchpad</a>
+<a class="text-white text-sm font-medium leading-normal" href="#">NeuraLinker</a>
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Developers</a>
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Community</a>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+<span class="truncate">Launch App</span>
+</button>
+</div>
+</div>
+</header>
+<main class="px-4 md:px-10 lg:px-20 py-10 lg:py-16">
+<div class="layout-content-container flex flex-col max-w-5xl mx-auto flex-1 gap-12 lg:gap-20">
+<div class="flex flex-wrap justify-between gap-3 p-4">
+<p class="text-white text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]">NeuraLinker Blockchain</p>
+</div>
+<div class="@container">
+<div class="@[480px]:p-4">
+<div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4 text-center" data-alt="Abstract blue and purple swirling energy background" style='background-image: linear-gradient(rgba(16, 22, 34, 0.8) 0%, rgba(16, 22, 34, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuC73uh6RLLZNCD1EDBrXn9Za3Zl8M1mOPg7cfj9EMngpHkdLisiFFVH1EHDAUswlpDAKjmL6lg6RUa69JvoetBzMWbTOBPssXhxeUOFEQ8ZrKvSfb4P5m_zZjYNgBKjuAO-SfXScXJc65XM-EaKB7z8FFYKmLVUInNpUSgsJlZ_c1s_-fST-SI48HjSP5zI9t4ibhbThTI9l7Ak33fxB544_RIqiHlerbfdS5geBIhs4EysUtCMwQw5H86ffQVdwZ7t3GifRj_O68c");'>
+<div class="flex flex-col gap-4 max-w-3xl">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-6xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                        Sovereign, Secure, Scalable Blockchain
+                                    </h1>
+<h2 class="text-white/80 text-base font-normal leading-normal @[480px]:text-lg @[480px]:font-normal @[480px]:leading-normal">
+                                        Built with Cosmos SDK and CometBFT for AI-enhanced applications, wallets, and cross-chain assets. Provides a sovereign, secure, and scalable chain where applications can operate without relying on external infrastructure.
+                                    </h2>
+</div>
+</div>
+</div>
+</div>
+<section>
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Current Status</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 glassmorphism">
+<p class="text-white/80 text-base font-medium leading-normal">Cosmos SDK Chain</p>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-green-500"></div>
+<p class="text-white tracking-light text-2xl font-bold leading-tight">Active</p>
+</div>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 glassmorphism">
+<p class="text-white/80 text-base font-medium leading-normal">Validator</p>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-green-500"></div>
+<p class="text-white tracking-light text-2xl font-bold leading-tight">Online</p>
+</div>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 glassmorphism">
+<p class="text-white/80 text-base font-medium leading-normal">Chain Operational</p>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-green-500"></div>
+<p class="text-white tracking-light text-2xl font-bold leading-tight">Operational</p>
+</div>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 glassmorphism">
+<p class="text-white/80 text-base font-medium leading-normal">IBC/Transfer Module</p>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-green-500"></div>
+<p class="text-white tracking-light text-2xl font-bold leading-tight">Enabled</p>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">How It Works</h2>
+<div class="grid md:grid-cols-2 gap-8 p-4">
+<div class="flex flex-col gap-4">
+<h3 class="text-xl font-bold text-white">Application Layer (Cosmos SDK)</h3>
+<p class="text-white/80 mb-3">The SDK handles accounts and balances, staking and validators, governance, bank module, minting module, and IBC (Inter-Blockchain Communication).</p>
+<ul class="text-white/70 text-sm space-y-2">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base">check</span> Accounts and balances with nlk1... address format</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base">check</span> Proof-of-Stake validators securing the chain</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base">check</span> On-chain governance and proposals</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base">check</span> Token transfers and cross-chain messaging</li>
+</ul>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="text-xl font-bold text-white">Consensus Layer (CometBFT)</h3>
+<p class="text-white/80 mb-3">Handles block production, validator rotation, fork prevention, and deterministic finality. Blocks finalize in seconds and are irreversible.</p>
+<ul class="text-white/70 text-sm space-y-2">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base">check</span> High-performance block production</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base">check</span> Secure validator rotation</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base">check</span> Deterministic finality for identity systems and AI-powered wallets</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base">check</span> Suitable for cross-chain settlements and asset bridging</li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Active Development</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+<div class="flex flex-col gap-4 p-6 rounded-xl glassmorphism">
+<div class="flex justify-between items-center">
+<h3 class="font-bold text-white">Full RPC Exposure</h3>
+<span class="text-xs font-medium text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded-full">In Progress</span>
+</div>
+<p class="text-white/60 text-sm">Supporting wallet connection, block explorers, web/mobile integration, and validator dashboards.</p>
+<div class="w-full bg-gray-700 rounded-full h-2.5">
+<div class="gradient-bg h-2.5 rounded-full" style="width: 75%"></div>
+</div>
+</div>
+<div class="flex flex-col gap-4 p-6 rounded-xl glassmorphism">
+<div class="flex justify-between items-center">
+<h3 class="font-bold text-white">Multi-Chain Wallet Integration</h3>
+<span class="text-xs font-medium text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded-full">In Progress</span>
+</div>
+<p class="text-white/60 text-sm">Generate local NLK wallets, link external Solana wallets, show balances from both chains.</p>
+<div class="w-full bg-gray-700 rounded-full h-2.5">
+<div class="gradient-bg h-2.5 rounded-full" style="width: 50%"></div>
+</div>
+</div>
+<div class="flex flex-col gap-4 p-6 rounded-xl glassmorphism">
+<div class="flex justify-between items-center">
+<h3 class="font-bold text-white">Bridged Asset Module</h3>
+<span class="text-xs font-medium text-purple-400 bg-purple-900/50 px-2 py-1 rounded-full">Planned</span>
+</div>
+<p class="text-white/60 text-sm">PulseAI to NLK bridging: detect deposits on Solana, mint wrapped PulseAI on NeuraLinker.</p>
+<div class="w-full bg-gray-700 rounded-full h-2.5">
+<div class="gradient-bg h-2.5 rounded-full" style="width: 10%"></div>
+</div>
+</div>
+<div class="flex flex-col gap-4 p-6 rounded-xl glassmorphism">
+<div class="flex justify-between items-center">
+<h3 class="font-bold text-white">Web App (Neural Wallet)</h3>
+<span class="text-xs font-medium text-purple-400 bg-purple-900/50 px-2 py-1 rounded-full">Planned</span>
+</div>
+<p class="text-white/60 text-sm">Wallet creation, token display, identity system (Neural ID), bridge UI, and asset dashboard.</p>
+<div class="w-full bg-gray-700 rounded-full h-2.5">
+<div class="gradient-bg h-2.5 rounded-full" style="width: 5%"></div>
+</div>
+</div>
+<div class="flex flex-col gap-4 p-6 rounded-xl glassmorphism">
+<div class="flex justify-between items-center">
+<h3 class="font-bold text-white">Mobile App</h3>
+<span class="text-xs font-medium text-purple-400 bg-purple-900/50 px-2 py-1 rounded-full">Planned</span>
+</div>
+<p class="text-white/60 text-sm">Android first, then WebApp wrapper, iOS later.</p>
+<div class="w-full bg-gray-700 rounded-full h-2.5">
+<div class="gradient-bg h-2.5 rounded-full" style="width: 5%"></div>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Technical Specifications</h2>
+<div class="p-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 rounded-xl glassmorphism">
+<div class="p-4 flex justify-between border-b md:border-b-0 md:border-r border-white/10">
+<span class="text-white/80">Token</span>
+<span class="font-bold text-white">NLK</span>
+</div>
+<div class="p-4 flex justify-between">
+<span class="text-white/80">Consensus</span>
+<span class="font-bold text-white">CometBFT</span>
+</div>
+<div class="p-4 flex justify-between border-b md:border-b-0 md:border-r border-white/10">
+<span class="text-white/80">Framework</span>
+<span class="font-bold text-white">Cosmos SDK</span>
+</div>
+<div class="p-4 flex flex-col sm:flex-row sm:justify-between gap-2">
+<span class="text-white/80">Address Format</span>
+<div class="flex items-center gap-2 bg-[#121217] p-2 rounded-lg">
+<code class="font-mono text-sm text-white/90">nlk1abcde...fghij</code>
+<button class="text-white/60 hover:text-white transition-colors" title="Copy address">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="p-4">
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">MetaPulse Integration</h2>
+<p class="text-white/70 mb-6 max-w-3xl">NeuraLinker provides a new layer that extends MetaPulse utility and ecosystem. Today, MetaPulse lives exclusively on Solana, but through NeuraLinker, users gain access to cross-chain functionality.</p>
+<div class="grid md:grid-cols-5 gap-4 mb-8">
+<div class="flex flex-col items-center gap-3 text-center">
+<div class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary bg-background-dark text-lg font-bold text-primary">1</div>
+<h3 class="text-sm font-bold text-white">Link Solana Wallet</h3>
+<p class="text-xs text-white/60">Connect Phantom wallet to the UI or scan QR code</p>
+</div>
+<div class="flex flex-col items-center gap-3 text-center">
+<div class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary bg-background-dark text-lg font-bold text-primary">2</div>
+<h3 class="text-sm font-bold text-white">Transfer PulseAI</h3>
+<p class="text-xs text-white/60">Send PulseAI to bridge address on Solana</p>
+</div>
+<div class="flex flex-col items-center gap-3 text-center">
+<div class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary bg-background-dark text-lg font-bold text-primary">3</div>
+<h3 class="text-sm font-bold text-white">Mint Wrapped</h3>
+<p class="text-xs text-white/60">NeuraLinker mints wrapped PulseAI (wpulseai)</p>
+</div>
+<div class="flex flex-col items-center gap-3 text-center">
+<div class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary bg-background-dark text-lg font-bold text-primary">4</div>
+<h3 class="text-sm font-bold text-white">Use on NeuraLinker</h3>
+<p class="text-xs text-white/60">Hold, trade, stake, access apps, use for Neural ID</p>
+</div>
+<div class="flex flex-col items-center gap-3 text-center">
+<div class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary bg-background-dark text-lg font-bold text-primary">5</div>
+<h3 class="text-sm font-bold text-white">Burn to Return</h3>
+<p class="text-xs text-white/60">Burn wrapped tokens to release real PulseAI on Solana</p>
+</div>
+</div>
+</section>
+<section class="p-4">
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">Benefits for MetaPulse Holders</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="rounded-xl glassmorphism p-6">
+<h3 class="text-lg font-bold text-white mb-2">Second Chain for Assets</h3>
+<p class="text-white/70 text-sm">Expands usage, adds new mechanics, and provides early access perks for your assets.</p>
+</div>
+<div class="rounded-xl glassmorphism p-6">
+<h3 class="text-lg font-bold text-white mb-2">Secondary Wallet & Identity</h3>
+<p class="text-white/70 text-sm">Protects your Phantom wallet while providing a new identity system on NeuraLinker.</p>
+</div>
+<div class="rounded-xl glassmorphism p-6">
+<h3 class="text-lg font-bold text-white mb-2">New Features</h3>
+<p class="text-white/70 text-sm">Access features not possible on Solana: smart modules, on-chain identity, AI integration, gas customization, and IBC.</p>
+</div>
+<div class="rounded-xl glassmorphism p-6">
+<h3 class="text-lg font-bold text-white mb-2">NLK Token Utility</h3>
+<p class="text-white/70 text-sm">As bridging increases, NLK demand increases, creating value for the ecosystem.</p>
+</div>
+<div class="rounded-xl glassmorphism p-6">
+<h3 class="text-lg font-bold text-white mb-2">Early Adopter Status</h3>
+<p class="text-white/70 text-sm">Become an early adopter of an entire new ecosystem with more value, utility, and long-term potential.</p>
+</div>
+<div class="rounded-xl glassmorphism p-6">
+<h3 class="text-lg font-bold text-white mb-2">Cross-Chain Interoperability</h3>
+<p class="text-white/70 text-sm">One wallet to hold assets from many chains, with higher liquidity inside the L1.</p>
+</div>
+</div>
+</section>
+<section class="p-4">
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">Cross-Chain Architecture</h2>
+<p class="text-white/70 mb-4 max-w-3xl">After PulseAI, other chains and tokens will follow the same architecture. Users send tokens to a bridge receiver wallet on the original chain, a backend relayer or IBC module detects the transaction, and NeuraLinker mints a wrapped version. Users can return their tokens anytime by burning wrapped tokens to release the originals.</p>
+<div class="grid md:grid-cols-2 gap-4">
+<div class="rounded-xl glassmorphism p-6">
+<h3 class="text-lg font-bold text-white mb-3">Benefits</h3>
+<ul class="space-y-2 text-sm text-white/70">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base">check</span> Full interoperability between chains</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base">check</span> Unified wallet for multi-chain assets</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base">check</span> New ecosystem forming around NLK</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base">check</span> Higher liquidity inside the L1</li>
+</ul>
+</div>
+<div class="rounded-xl glassmorphism p-6">
+<h3 class="text-lg font-bold text-white mb-3">Process</h3>
+<ul class="space-y-2 text-sm text-white/70">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base">arrow_forward</span> User sends tokens to bridge receiver</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base">arrow_forward</span> Backend detects transaction</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base">arrow_forward</span> NeuraLinker mints wrapped version</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base">arrow_forward</span> User sees wrapped token in Neural Wallet</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="p-4">
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">Future Development</h2>
+<div class="grid md:grid-cols-2 gap-6">
+<div class="rounded-xl glassmorphism p-6">
+<h3 class="text-lg font-bold text-white mb-4">Upcoming</h3>
+<ul class="space-y-2 text-sm text-white/70">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-cyan-400 text-base">schedule</span> Multi-chain indexing</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-cyan-400 text-base">schedule</span> NLK staking interface</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-cyan-400 text-base">schedule</span> Validator dashboard</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-cyan-400 text-base">schedule</span> Governance portal</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-cyan-400 text-base">schedule</span> Full bridge automation</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-cyan-400 text-base">schedule</span> Token factory module</li>
+</ul>
+</div>
+<div class="rounded-xl glassmorphism p-6">
+<h3 class="text-lg font-bold text-white mb-4">Long Term</h3>
+<ul class="space-y-2 text-sm text-white/70">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-purple-400 text-base">auto_awesome</span> AI-supported wallet operations</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-purple-400 text-base">auto_awesome</span> Neural Identity verification</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-purple-400 text-base">auto_awesome</span> Social graph indexing</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-purple-400 text-base">auto_awesome</span> App marketplace for third-party token creators</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-purple-400 text-base">auto_awesome</span> Launchpad for Solana to NLK cross-chain projects</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="text-center p-4 flex flex-col items-center gap-6">
+<h2 class="text-3xl font-bold text-white">Ready to Dive In?</h2>
+<p class="text-white/80 max-w-2xl">Explore the NeuraLinker ecosystem, manage your assets, or contribute to the network's security by becoming a validator.</p>
+<div class="flex flex-col sm:flex-row gap-4 mt-4">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 gradient-bg text-white text-base font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+<span class="truncate">Explore Neural Wallet</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-white/10 text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-white/20 transition-colors">
+<span class="truncate">Learn About Bridging</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-white/10 text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-white/20 transition-colors">
+<span class="truncate">View Validator Dashboard</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,19 @@
+{
+  "name": "metapulse-website",
+  "version": "1.0.0",
+  "description": "MetaPulse AI - Multi-page Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -l $PORT || npx serve . -l 3000"
+  },
+  "keywords": ["metapulse", "solana", "blockchain", "ai", "launchpad", "neuralinker"],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
+}
+

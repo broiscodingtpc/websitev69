@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MetaPulse Launchpad</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Fira+Code:wght@500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#6366F1", // Indigo-500
+              "background-light": "#f5f6f8",
+              "background-dark": "#0B0715", // Deeper purple-black
+              "electric-blue": "#3B82F6", // Blue-500
+              "neon-purple": "#A855F7", // Purple-500
+              "glow-cyan": "#22D3EE",
+            },
+            fontFamily: {
+              display: ["Space Grotesk", "sans-serif"],
+              mono: ["Fira Code", "monospace"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              "2xl": "1rem",
+              full: "9999px",
+            },
+            boxShadow: {
+              'glow-sm': '0 0 8px 0px rgba(59, 130, 246, 0.3)',
+              'glow-md': '0 0 16px 0px rgba(168, 85, 247, 0.4)',
+            },
+            keyframes: {
+              'subtle-pulse': {
+                '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+                '50%': { transform: 'scale(1.02)', opacity: '0.95' },
+              },
+            },
+            animation: {
+              'subtle-pulse': 'subtle-pulse 4s ease-in-out infinite',
+            },
+          },
+        },
+      };
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+      }
+      .bg-grid {
+        background-image:
+          linear-gradient(to right, rgba(55, 65, 81, 0.2) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(55, 65, 81, 0.2) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      .bg-radial-glow {
+        background-image: radial-gradient(circle at top left, rgba(59, 130, 246, 0.15), transparent 40%),
+                          radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.15), transparent 40%);
+      }
+      .card-glow {
+        position: relative;
+        overflow: hidden;
+      }
+      .card-glow::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(138, 43, 226, 0.1), transparent 40%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 0;
+      }
+      .card-glow:hover::before {
+        opacity: 1;
+      }
+    </style>
+</head>
+<body class="font-display bg-background-dark text-gray-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden bg-grid">
+<div class="absolute inset-0 z-0 bg-radial-glow"></div>
+<div class="relative flex h-full grow flex-col">
+<div class="flex flex-1 justify-center px-4 py-5 sm:px-10 md:px-20 lg:px-40">
+<div class="flex max-w-[960px] flex-1 flex-col">
+<header class="z-20 flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 bg-background-dark/50 px-4 py-4 backdrop-blur-md md:px-10">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em] text-white">MetaPulse</h2>
+</div>
+<div class="hidden flex-1 items-center justify-end gap-8 md:flex">
+<div class="flex items-center gap-9">
+<a class="text-sm font-medium leading-normal text-white/70 transition-colors hover:text-white" href="../metapulse_ai_landing_page/code.html">Home</a>
+<a class="relative text-sm font-medium leading-normal text-white" href="#">Launchpad<span class="absolute -bottom-1 left-1/2 h-0.5 w-4 -translate-x-1/2 rounded-full bg-primary"></span></a>
+<a class="text-sm font-medium leading-normal text-white/70 transition-colors hover:text-white" href="../neuralinker_blockchain/code.html">NeuraLinker</a>
+<a class="text-sm font-medium leading-normal text-white/70 transition-colors hover:text-white" href="#">Docs</a>
+</div>
+<button class="flex h-10 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary px-4 text-sm font-bold leading-normal tracking-[0.015em] text-white shadow-lg shadow-primary/30 transition-all hover:scale-105 hover:shadow-primary/50">
+<span class="truncate">Connect Wallet</span>
+</button>
+</div>
+<div class="md:hidden">
+<button class="text-white">
+<span class="material-symbols-outlined"> menu </span>
+</button>
+</div>
+</header>
+<main class="flex flex-col gap-16 py-10 md:gap-24 md:py-16">
+<div class="@container">
+<div class="@[480px]:p-4">
+<div class="relative flex min-h-[480px] flex-col items-center justify-center gap-6 overflow-hidden border border-white/10 bg-black/30 p-4 shadow-2xl shadow-neon-purple/10 backdrop-blur-xl @[480px]:gap-8 @[480px]:rounded-2xl">
+<div class="absolute inset-0 z-0 bg-gradient-to-br from-electric-blue/20 via-transparent to-neon-purple/30 opacity-50"></div>
+<div class="absolute -left-1/4 top-0 h-1/2 w-1/2 rounded-full bg-electric-blue/20 blur-3xl"></div>
+<div class="absolute -right-1/4 bottom-0 h-1/2 w-1/2 rounded-full bg-neon-purple/20 blur-3xl"></div>
+<div class="z-10 flex flex-col gap-4 text-center">
+<h1 class="text-4xl font-bold leading-tight tracking-tighter text-white @[480px]:text-6xl @[480px]:font-bold">Launch Your Token Instantly</h1>
+<h2 class="max-w-2xl text-base font-normal leading-relaxed text-white/80 @[480px]:text-lg">Revolutionary token launching system on Solana, built completely on-chain using Anchor Framework with intelligent bonding curve technology. No middle-man, no hidden fees, no rug risk.</h2>
+</div>
+<div class="z-10 flex flex-col flex-wrap gap-3 sm:flex-row sm:justify-center">
+<button class="flex h-12 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-electric-blue to-neon-purple px-5 text-base font-bold leading-normal tracking-[0.015em] text-white shadow-lg shadow-neon-purple/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-neon-purple/40">
+<span class="truncate">Launch Your Token</span>
+</button>
+<button class="group relative flex h-12 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-gray-800/50 px-5 text-base font-bold leading-normal tracking-[0.015em] text-white transition-colors hover:text-white">
+<span class="absolute inset-0 z-0 bg-white/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+<span class="relative z-10 truncate">View Active Launches</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-10 px-4 py-10 @container">
+<div class="flex flex-col gap-4">
+<h1 class="max-w-[720px] text-3xl font-bold leading-tight tracking-tighter text-white @[480px]:text-4xl @[480px]:font-bold">Unmatched Benefits for Your Token Launch</h1>
+<p class="max-w-[720px] text-base font-normal leading-relaxed text-white/70">Our platform provides a suite of powerful features designed for a secure, transparent, and successful launch.</p>
+</div>
+<div class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4 p-0">
+<div class="card-glow group flex flex-1 transform flex-col gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-electric-blue/50 hover:shadow-glow-sm">
+<div class="relative z-10 text-electric-blue transition-colors group-hover:text-glow-cyan"><span class="material-symbols-outlined text-3xl"> sell </span></div>
+<div class="relative z-10 flex flex-col gap-1">
+<h2 class="text-base font-bold leading-tight text-white">Controlled Initial Price</h2>
+<p class="text-sm font-normal leading-normal text-white/60">Set controlled initial price with automatic market cap calculation.</p>
+</div>
+</div>
+<div class="card-glow group flex flex-1 transform flex-col gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-electric-blue/50 hover:shadow-glow-sm">
+<div class="relative z-10 text-electric-blue transition-colors group-hover:text-glow-cyan"><span class="material-symbols-outlined text-3xl"> visibility </span></div>
+<div class="relative z-10 flex flex-col gap-1">
+<h2 class="text-base font-bold leading-tight text-white">Transparent Distribution</h2>
+<p class="text-sm font-normal leading-normal text-white/60">100% transparent distribution with full visibility into all transactions.</p>
+</div>
+</div>
+<div class="card-glow group flex flex-1 transform flex-col gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-electric-blue/50 hover:shadow-glow-sm">
+<div class="relative z-10 text-electric-blue transition-colors group-hover:text-glow-cyan"><span class="material-symbols-outlined text-3xl"> trending_up </span></div>
+<div class="relative z-10 flex flex-col gap-1">
+<h2 class="text-base font-bold leading-tight text-white">Automatic Price Growth</h2>
+<p class="text-sm font-normal leading-normal text-white/60">Automatic price growth based on demand through intelligent bonding curve.</p>
+</div>
+</div>
+<div class="card-glow group flex flex-1 transform flex-col gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-electric-blue/50 hover:shadow-glow-sm">
+<div class="relative z-10 text-electric-blue transition-colors group-hover:text-glow-cyan"><span class="material-symbols-outlined text-3xl"> sync_alt </span></div>
+<div class="relative z-10 flex flex-col gap-1">
+<h2 class="text-base font-bold leading-tight text-white">Seamless Migration</h2>
+<p class="text-sm font-normal leading-normal text-white/60">Final migration to Raydium liquidity pool when ready.</p>
+</div>
+</div>
+</div>
+</div>
+<section class="grid gap-8 px-4 md:grid-cols-2">
+<div class="flex flex-col gap-4">
+<h2 class="text-[22px] font-bold leading-tight tracking-tight text-white">Our Program</h2>
+<div class="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[.07] p-4 backdrop-blur-lg transition-all hover:border-white/20">
+<div class="flex-1 overflow-hidden">
+<p class="text-sm text-white/60">Program ID</p>
+<p class="truncate font-mono text-base text-white" id="program-id">G6bkvn3rnWtzCuB89rwzvUeAtxnSiLGDXL3oDtWV4Su9</p>
+</div>
+<button class="text-white/60 transition-colors hover:text-white" onclick="navigator.clipboard.writeText('G6bkvn3rnWtzCuB89rwzvUeAtxnSiLGDXL3oDtWV4Su9')"><span class="material-symbols-outlined"> content_copy </span></button>
+<a class="text-white/60 transition-colors hover:text-white" href="https://explorer.solana.com/address/G6bkvn3rnWtzCuB89rwzvUeAtxnSiLGDXL3oDtWV4Su9?cluster=devnet" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined"> open_in_new </span></a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h2 class="text-[22px] font-bold leading-tight tracking-tight text-white">Audited &amp; Secure</h2>
+<div class="rounded-2xl border border-white/10 bg-white/[.07] p-4 backdrop-blur-lg">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-3xl text-green-400"> verified_user </span>
+<ul class="flex flex-col gap-2">
+<li class="flex items-center gap-2 text-sm text-white"><span class="material-symbols-outlined text-base text-electric-blue"> done </span> Anchor Security Checks</li>
+<li class="flex items-center gap-2 text-sm text-white"><span class="material-symbols-outlined text-base text-electric-blue"> done </span> PDA Validations</li>
+<li class="flex items-center gap-2 text-sm text-white"><span class="material-symbols-outlined text-base text-electric-blue"> done </span> Non-custodial Funds</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-6 px-4">
+<h2 class="text-[22px] font-bold leading-tight tracking-tight text-white">Platform Status</h2>
+<div class="grid gap-6 md:grid-cols-3">
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-sm">
+<span class="font-medium text-white">Smart Contract</span>
+<span class="font-bold text-green-400">Complete</span>
+</div>
+<div class="h-2 w-full rounded-full bg-white/10"><div class="h-2 w-full rounded-full bg-gradient-to-r from-green-400 to-cyan-400"></div></div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-sm">
+<span class="font-medium text-white">UI</span>
+<span class="font-bold text-green-400">Complete</span>
+</div>
+<div class="h-2 w-full rounded-full bg-white/10"><div class="h-2 w-full rounded-full bg-gradient-to-r from-green-400 to-cyan-400"></div></div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-sm">
+<span class="font-medium text-white">Transactions</span>
+<span class="font-bold text-green-400">Verified</span>
+</div>
+<div class="h-2 w-full rounded-full bg-white/10"><div class="h-2 w-full rounded-full bg-gradient-to-r from-green-400 to-cyan-400"></div></div>
+</div>
+</div>
+</section>
+<section class="relative flex flex-col gap-8 px-4">
+<div class="text-center">
+<h2 class="text-[28px] font-bold leading-tight tracking-tighter text-white">How It Works</h2>
+<p class="mt-2 text-white/70">A simple, streamlined process to get your token to market.</p>
+</div>
+<div class="relative grid gap-8 md:grid-cols-3">
+<div class="absolute left-0 right-0 top-8 hidden h-0.5 w-full items-center justify-center bg-gradient-to-r from-transparent via-electric-blue/50 to-transparent md:flex"></div>
+<div class="relative z-10 flex flex-col items-center gap-4 text-center">
+<div class="flex h-16 w-16 items-center justify-center rounded-full border-2 border-electric-blue bg-background-dark text-xl font-bold text-electric-blue shadow-lg shadow-electric-blue/30 transition-shadow hover:shadow-electric-blue/50">1</div>
+<h3 class="text-lg font-bold text-white">Set Token Parameters</h3>
+<p class="text-sm text-white/60">Set your token parameters including initial price and market cap settings.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-4 text-center">
+<div class="flex h-16 w-16 items-center justify-center rounded-full border-2 border-electric-blue bg-background-dark text-xl font-bold text-electric-blue shadow-lg shadow-electric-blue/30 transition-shadow hover:shadow-electric-blue/50">2</div>
+<h3 class="text-lg font-bold text-white">Initialize Bonding Curve</h3>
+<p class="text-sm text-white/60">Initialize the bonding curve and start the launch process with buy/sell functionality.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-4 text-center">
+<div class="flex h-16 w-16 items-center justify-center rounded-full border-2 border-electric-blue bg-background-dark text-xl font-bold text-electric-blue shadow-lg shadow-electric-blue/30 transition-shadow hover:shadow-electric-blue/50">3</div>
+<h3 class="text-lg font-bold text-white">Finalize to Raydium</h3>
+<p class="text-sm text-white/60">Finalize and automatically migrate your token's liquidity pool to Raydium when ready.</p>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-6 px-4">
+<h2 class="text-[28px] font-bold leading-tight tracking-tighter text-white">Token Utility for PULSEAI</h2>
+<p class="text-white/70 max-w-3xl">MetaPulse Launchpad becomes the primary utility for PULSEAI token, creating continuous demand and value.</p>
+<div class="grid gap-6 md:grid-cols-2 mt-4">
+<div class="rounded-2xl border border-white/10 bg-white/[.07] p-6 backdrop-blur-lg">
+<h3 class="text-lg font-bold text-white mb-3">Primary Utility</h3>
+<ul class="flex flex-col gap-2 text-sm text-white/80">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-electric-blue text-base">check_circle</span> Launchpad fees convert to buyback and burn</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-electric-blue text-base">check_circle</span> Platform increases demand for token</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-electric-blue text-base">check_circle</span> Token creators pay with PULSEAI for premium features</li>
+</ul>
+</div>
+<div class="rounded-2xl border border-white/10 bg-white/[.07] p-6 backdrop-blur-lg">
+<h3 class="text-lg font-bold text-white mb-3">Alpha Token for Developers</h3>
+<ul class="flex flex-col gap-2 text-sm text-white/80">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-neon-purple text-base">check_circle</span> Staking features paid in PULSEAI</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-neon-purple text-base">check_circle</span> Boosts and featured listings</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-neon-purple text-base">check_circle</span> Curve customization options</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-6 px-4">
+<h2 class="text-[28px] font-bold leading-tight tracking-tighter text-white">Development Roadmap</h2>
+<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mt-4">
+<div class="rounded-2xl border border-white/10 bg-white/[.07] p-6 backdrop-blur-lg">
+<h3 class="text-base font-bold text-white mb-2">Beta Phase</h3>
+<ul class="flex flex-col gap-2 text-sm text-white/70">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-400 text-base">done</span> Deploy bonding curve on Devnet</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-400 text-base">done</span> Complete functional UI</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-400 text-base">done</span> Buy/Sell logic stabilized</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">sync</span> Public testing</li>
+</ul>
+</div>
+<div class="rounded-2xl border border-white/10 bg-white/[.07] p-6 backdrop-blur-lg">
+<h3 class="text-base font-bold text-white mb-2">Mainnet Phase</h3>
+<ul class="flex flex-col gap-2 text-sm text-white/70">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">schedule</span> Final mainnet deployment</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">schedule</span> Real token integration</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">schedule</span> Public community launch</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">schedule</span> SOL/USD price automation</li>
+</ul>
+</div>
+<div class="rounded-2xl border border-white/10 bg-white/[.07] p-6 backdrop-blur-lg">
+<h3 class="text-base font-bold text-white mb-2">Liquidity Engine</h3>
+<ul class="flex flex-col gap-2 text-sm text-white/70">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">schedule</span> Auto LP Creator on Raydium</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">schedule</span> Auto-lock LP tokens</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">schedule</span> Automatic burn / Treasury logic</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">schedule</span> Platform fees system</li>
+</ul>
+</div>
+<div class="rounded-2xl border border-white/10 bg-white/[.07] p-6 backdrop-blur-lg">
+<h3 class="text-base font-bold text-white mb-2">Launchpad as a Service</h3>
+<ul class="flex flex-col gap-2 text-sm text-white/70">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">schedule</span> One-click token launch</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">schedule</span> API for third-party tools</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">schedule</span> MetaPulse Pro version</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-base">schedule</span> Referral / revenue share system</li>
+</ul>
+</div>
+</div>
+</section>
+</main>
+</div>
+</div>
+</div>
+</div>
+<script>
+    document.addEventListener('mousemove', (e) => {
+      document.querySelectorAll('.card-glow').forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+</script>
+
+</body></html>
