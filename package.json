@@ -4,7 +4,7 @@
   "description": "MetaPulse AI - Multi-page Website",
   "main": "index.html",
   "scripts": {
-    "start": "npx serve . -l $PORT || npx serve . -l 3000"
+    "start": "serve . -l ${PORT:-3000}"
   },
   "keywords": ["metapulse", "solana", "blockchain", "ai", "launchpad", "neuralinker"],
   "author": "",
