@@ -80,9 +80,9 @@ tailwind.config = {
 </svg>
 </div>
 <div class="w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-<header class="sticky top-4 z-50 flex items-center justify-between whitespace-nowrap px-6 py-3 border border-white/10 bg-black/20 backdrop-blur-xl rounded-xl m-4">
-<div class="flex items-center gap-3 text-white">
-<div class="size-8 text-primary">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap px-3 sm:px-6 py-3 border border-white/10 bg-black/20 backdrop-blur-xl rounded-xl m-2 sm:m-4">
+<div class="flex items-center gap-2 sm:gap-3 text-white">
+<div class="size-6 sm:size-8 text-primary">
 <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
 <path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="url(#logo-gradient)"></path>
 <defs>
@@ -93,16 +93,29 @@ tailwind.config = {
 </defs>
 </svg>
 </div>
-<h2 class="text-white text-xl font-bold tracking-tighter">MetaPulse</h2>
+<h2 class="text-white text-base sm:text-xl font-bold tracking-tighter">MetaPulse</h2>
 </div>
 <nav class="hidden md:flex flex-1 justify-center items-center gap-9">
 <a class="text-white transition-colors text-sm font-medium" href="index.html" target="_self">Home</a>
 <a class="text-white/70 hover:text-white transition-colors text-sm font-medium" href="launchpad.html" target="_self">Launchpad</a>
 <a class="text-white/70 hover:text-white transition-colors text-sm font-medium" href="neuralinker.html" target="_self">NeuraLinker</a>
 </nav>
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-secondary/20 transition-all duration-300">
+<button class="hidden md:flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-secondary/20 transition-all duration-300">
 <span class="truncate">Connect Wallet</span>
 </button>
+<button id="mobile-menu-btn" class="md:hidden flex items-center justify-center text-white p-2" aria-label="Toggle menu">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 mt-2 mx-2 bg-black/95 backdrop-blur-xl border border-white/10 rounded-xl p-4 shadow-xl">
+<nav class="flex flex-col gap-4">
+<a class="text-white transition-colors text-sm font-medium py-2 px-4 rounded-lg hover:bg-white/10" href="index.html" target="_self">Home</a>
+<a class="text-white/70 hover:text-white transition-colors text-sm font-medium py-2 px-4 rounded-lg hover:bg-white/10" href="launchpad.html" target="_self">Launchpad</a>
+<a class="text-white/70 hover:text-white transition-colors text-sm font-medium py-2 px-4 rounded-lg hover:bg-white/10" href="neuralinker.html" target="_self">NeuraLinker</a>
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-secondary/20 transition-all duration-300 mt-2">
+<span class="truncate">Connect Wallet</span>
+</button>
+</nav>
+</div>
 </header>
 <main class="flex flex-col gap-24 md:gap-32 py-20 md:py-28">
 <section class="@container">
@@ -215,6 +228,32 @@ tailwind.config = {
 console.log('Page loaded: INDEX.HTML - MetaPulse AI');
 console.log('Current URL:', window.location.href);
 console.log('Page title:', document.title);
+
+// Mobile menu toggle
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const icon = mobileMenuBtn.querySelector('.material-symbols-outlined');
+        if (icon) {
+            icon.textContent = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+        }
+    });
+
+    // Close menu when clicking on a link
+    const menuLinks = mobileMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            const icon = mobileMenuBtn.querySelector('.material-symbols-outlined');
+            if (icon) {
+                icon.textContent = 'menu';
+            }
+        });
+    });
+}
 </script>
 </body>
 </html>
